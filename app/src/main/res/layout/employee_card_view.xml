@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="employee"
+            type="com.block.employeedirectoryapp.data.Employee" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        android:layout_marginBottom="@dimen/dimen_8_dp"
+        android:layout_marginStart="@dimen/dimen__4"
+        android:layout_marginEnd="@dimen/dimen__4"
+        app:cardElevation="@dimen/dimen8">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen8"
+            android:layout_marginBottom="@dimen/dimen8">
+
+            <TextView
+                android:id="@+id/employee_name"
+                style = "@style/TextView.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen8"
+                android:text="@{employee.fullName}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Employee Name" />
+
+            <TextView
+                android:id="@+id/employee_team"
+                style="@style/TextView.Line2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/employee_name"
+                android:text="@{employee.team}"
+                tools:text="Team Name"/>
+
+            <TextView
+                android:id="@+id/employee_email"
+                style="@style/TextView.Line2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/employee_team"
+                android:text="@{employee.emailAddress}"
+                tools:text="Email Address"/>
+
+            <ImageView
+                android:id="@+id/employee_image"
+                android:layout_width="@dimen/dimen_80"
+                android:layout_height="@dimen/dimen_80"
+                thumbnailImage="@{employee.photoUrlSmall}"
+                app:srcCompat="@android:drawable/ic_menu_gallery"
+                android:layout_marginEnd="@dimen/dimen8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@{@string/employee_image_content_description(employee.fullName)}"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

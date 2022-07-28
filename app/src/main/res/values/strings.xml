@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EmployeeDirectoryApp</string>
+    <string name="sort_by">Sort By</string>
+    <string name="by_name">Name</string>
+    <string name="by_team">Team</string>
+    <string name="employee_image_content_description">%s photo</string>
+    <string name="no_data_to_display">No Data to Display</string>
+</resources>
